@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0189)file:///C:/Users/houmi/Desktop/%E5%8C%97%E4%BA%AC%E5%8D%8E%E5%A5%A5%E5%86%9C%E7%A7%91%E7%8E%89%E8%82%B2%E7%A7%8D%E5%BC%80%E5%8F%91%E6%9C%89%E9%99%90%E8%B4%A3%E4%BB%BB%E5%85%AC%E5%8F%B8.html -->
+<html class="ui-mobile"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>北京华奥农科玉育种开发有限责任公司</title>
+<link href="./binary_files/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./binary_files/easyui.css">
+<link rel="stylesheet" type="text/css" href="./binary_files/rk1126.css">
+<script type="text/javascript" src="./binary_files/jquery-1.8.0.min.js.下载"></script> 
+<script type="text/javascript" src="./binary_files/jquery.easyui.min.js.下载"></script>  
+<script type="text/javascript" src="./binary_files/api"></script><script type="text/javascript" src="./binary_files/getscript"></script><script type="text/javascript" src="./binary_files/getscript(1)"></script>
+<script type="text/javascript">
+	 var title='北京华奥农科玉育种开发有限责任公司';
+	 window.document.title=title;
+	    
+	var barcode = '0063669719973707';
+	$(function() {
+	$('#querylogin_').dialog('close');
+	LoadInfo();
+	if('true'=='false'){
+		if(barcode==""){
+		//弹出形式
+		//alert(' 您所查询的编号为:0063669719973707');
+		$('#product').html(' 您所查询的编号为:0063669719973707');
+		}else{
+		//alert(' 您所查询的编号为:0063669719973707'+"");
+		$('#product').html(' 您所查询的编号为:0063669719973707'+"");
+		}
+	}
+	});
+
+ 
+ 
+ function LoadInfo() { 
+            var strAddress = "";
+            var Longitude = 0.0;
+            var Latitude = 0.0;
+            // 百度地图API功能
+            var map = new BMap.Map("allmap");
+            var city = new BMap.LocalCity();
+            city.get(function (r) {
+                strAddress = r.name;
+            });
+            var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function (r) {
+                if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+                    var mk = new BMap.Marker(r.point);
+                    $.ajax({
+						url : '/q/web/GetLocations.do?lng='+r.point.lng+'&lat='+r.point.lat+'&barcode='+barcode,
+						type : 'POST', 
+						success : function(result) {	
+						}
+					});
+                }else {
+                }
+            }, { enableHighAccuracy: true });
+
+        }
+ 
+	function jump(pid,pname){
+		var pname1 = pname.substring(5,pname.length);
+		var url = '/q/web/queryProductInfo.do?pid='+pid+'&pname='+pname1+'';
+		url = encodeURI(encodeURI(url)) ;
+		window.location.href = url;
+	}
+	
+	$(function() {
+		$(".proinfo").hide();
+		$("#sub"+4).show(); 
+		document.getElementById("cpxx").style.display="none";
+		document.getElementById("sub1").style.display="none";
+		document.getElementById("zsxx").style.display="none";
+		document.getElementById("sub3").style.display="none";
+		document.getElementById("scxx").style.display="none";
+		document.getElementById("sub2").style.display="none";
+	});
+	
+	function showsub(str)
+	{	  
+		var  temp1= $("#sub"+str).is(":visible");
+		var  cpx= $("#cpxx").is(":visible");
+		if(temp1==true){
+			$("#sub"+str).hide();
+		}else{
+		 	$(".proinfo").hide();
+			$("#sub"+str).show();
+		} 
+	}
+	
+	function ShowMsg(){
+		document.getElementById("cpxx").style.display="";
+		document.getElementById("sub1").style.display="";
+		document.getElementById("zsxx").style.display="";
+		document.getElementById("sub3").style.display="";
+		document.getElementById("scxx").style.display="";
+		document.getElementById("sub2").style.display="";
+	}
+	
+</script></head>
+
+<body class="ui-mobile-viewport ui-overlay-a" style="zoom: 1;background-color: #eeeeee;">
+<div class="top">
+  <div class="log_btb">产品二维码追溯查询系统</div>
+</div>
+<img src="./binary_files/banner.jpg" style="width:100%;">
+  <div class="prolisthome" style="width: 97%; margin-top:10px;margin-right:auto; margin-left:auto; ">
+  	 	<!-- 二维码信息 -->
+  	 	<div class="claname bor_4"><div class="cls colo_4"><a href="javascript:showsub(4)">　二维码信息</a></div></div>
+         	<div class="proinfo" id="sub4" style="display: block;"> 
+	                <table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc;  height: 30px;  border-bottom: 0px;border-top: 0px;border-left: 0px;">品种名称：</td>
+   								<td width="70%" class="td" id="custname" style="height: 30px;border: 0px;">农大372</td>
+  							</tr>
+  						</tbody> 
+					</table>   
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">生产经营者：</td>
+   								<td width="70%" class="td" id="billdate" style="height: 30px;border: 0px;">北京华奥农科玉育种开发有限责任公司</td>
+  							</tr>
+  						</tbody> 
+					</table> 
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">单元识别码：</td>
+   								<td width="70%" class="td" id="customername" style="height: 30px;border: 0px;">0063669719973707</td>
+  							</tr>
+  						</tbody> 
+					</table> 
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">追溯网址：</td>
+   								<td width="70%" class="td" id="customername" style="height: 30px;border: 0px;"> <a style="text-decoration: underline;" onclick="ShowMsg();"> http://wl.nongkeyu.com:9988/q?c=0063669719973707</a></td>
+  							</tr>
+  						</tbody> 
+					</table> 
+           </div>
+  	 	
+  	 	<!--产品信息-->
+         <div class="claname bor_1" id="cpxx" style="display: none;"><div class="cls colo_1"><a href="javascript:showsub(1)">　产品信息</a></div></div>
+         	<div class="proinfo" id="sub1" style="display: none;"> 
+	                <table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">产品名称：</td>
+   								<td width="70%" class="td" id="line" style="height: 30px;border: 0px;">农大372（4800粒）</td>
+  							</tr>
+  						</tbody> 
+					</table>  
+	                <table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">产品批次：</td>
+   								<td width="70%" class="td" id="line" style="height: 30px;border: 0px;">181203A0202</td>
+  							</tr>
+  						</tbody> 
+					</table>   
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">查询次数：</td>
+   								<td width="70%" class="td" id="line" style="height: 30px;border: 0px;">11</td>
+  							</tr>
+  						</tbody> 
+					</table> 
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">首次时间：</td>
+   								<td width="70%" class="td" id="line" style="height: 30px;border: 0px;">2019-06-08 19:51:18</td>
+  							</tr>
+  						</tbody> 
+					</table> 
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">包装级别：</td>
+   								<td width="70%" class="td" id="line" style="height: 30px;border: 0px;">1</td>
+  							</tr>
+  						</tbody> 
+					</table> 
+					
+					<!-- 种子附属信息 -->
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+					  
+              </div> 
+  	 	 <!--追溯信息-->
+          <div class="claname bor_3" id="zsxx" style="display: none;"><div class="cls colo_3"><a href="javascript:showsub(3)">　追溯信息</a></div></div>
+         	<div class="proinfo" id="sub3" style="display: none;"> 
+	                <table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">发货商：</td>
+   								<td width="70%" class="td" id="custname" style="height: 30px;border: 0px;"></td>
+  							</tr>
+  						</tbody> 
+					</table>   
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">发货时间：</td>
+   								<td width="70%" class="td" id="billdate" style="height: 30px;border: 0px;"></td>
+  							</tr>
+  						</tbody> 
+					</table> 
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">经销商：</td>
+   								<td width="70%" class="td" id="customername" style="height: 30px;border: 0px;"></td>
+  							</tr>
+  						</tbody> 
+					</table> 
+           </div>
+  	 	
+ 		<!--生产信息-->
+         <div class="claname bor_2" id="scxx" style="display: none;"><div class="cls colo_2"><a href="javascript:showsub(2)">　生产信息</a></div></div>
+         	<div class="proinfo" id="sub2" style="display: none;"> 
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">制种产地：</td>
+   								<td width="70%" class="td" id="line" style="height: 30px;border: 0px;">新疆</td>
+  							</tr>
+  						</tbody> 
+					</table>   
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">加工批次：</td>
+   								<td width="70%" class="td" id="line" style="height: 30px;border: 0px;">D11704031M2</td>
+  							</tr>
+  						</tbody> 
+					</table>
+					<table style="font-size:16px; width: 97%; margin-top:10px;margin-right:auto; margin-left:auto;border-radius: 8px 8px 8px 8px;border: 0px; "> 
+	               		<tbody>
+  							<tr style="border: 0px;color: #000;">
+  								<td width="30%" class="td" style="border-color:#cccccc; height: 30px;border-bottom: 0px;border-top: 0px;border-left: 0px;">上级码：</td>
+   								
+									
+											<td width="70%" class="td" style="height: 30px;border: 0px;">2113340086805911</td>
+									
+									
+								
+  							</tr>
+  						</tbody> 
+					</table> 
+              </div> 
+ </div> 
+<table style="width: 97%;margin-right:auto; margin-left:auto;">
+     
+</table>  
+<p style="text-align:center">©技术支持：合肥宇胜信息科技有限公司</p>
+
+
+</body></html>
