@@ -1,0 +1,77 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	background: #FFF;
+}
+img {
+	max-width: 100%;
+}
+.text {
+	border: 1px #999 solid;
+	border-radius: 5px;
+	background-color: #FFF;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 8px;
+	margin-bottom: 2%;
+}
+p {
+	font-size: 14px;
+	line-height: 150%;
+	margin: 5px;
+	display: block;
+	font-family: "微软雅黑";
+	color: #363636;
+}
+table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	background: #FFF;
+}
+.music_div {
+	line-height: 30px;
+	position: relative;
+	margin: 0px;
+	word-wrap: break-word;
+	word-break: normal;
+	text-align: center;
+}
+.td {
+	margin: 0px;
+	font-size: 90%;
+	border: solid #999 1px;
+	text-align: center;
+	word-break:break-all;
+}
+.top {
+	float: left;
+	height: 55px;
+	width: 100%;
+	background-color: #02af6f; 
+	overflow: hidden;
+}
+.log_img {
+	width: 80px;
+	height: 55px;
+	border-radius: 7px;
+	overflow: hidden;
+	float: left;
+	text-align: center;
+	margin-left: 15px;
+}
+.log_btb {
+	text-align: center;
+	height: 55px;
+	font-size: 22px;
+	line-height: 55px;
+	color: #FFF;
+	font-family: "微软雅黑";
+}
+.proinfo{ 
+	display:none; 
+	}
+
